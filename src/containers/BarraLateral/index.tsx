@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import FiltroCard from '../../components/FiltroCard'
 import * as S from './style'
+import * as enums from '../../utils/enums/Tarefa'
 
 import { RootReducer } from '../../store'
 import { alteraTermo } from '../../store/reduces/filtro'
@@ -20,12 +21,32 @@ const BarraLateral = () => {
           onChange={(evento) => dispatch(alteraTermo(evento.target.value))}
         />
         <S.Filtro>
-          <FiltroCard legenda="Pendentes" contador={1} />
-          <FiltroCard legenda="Concluidas" contador={2} />
-          <FiltroCard legenda="Urgentes" contador={3} />
-          <FiltroCard legenda="Importantes" contador={4} />
-          <FiltroCard legenda="Normais" contador={5} />
-          <FiltroCard legenda="Todas" contador={6} ativo />
+          <FiltroCard
+            valor={enums.Status.PENDENTE}
+            criterio="status"
+            legenda="Pendentes"
+          />
+          <FiltroCard
+            valor={enums.Status.CONCLUIDA}
+            criterio="status"
+            legenda="Concluidas"
+          />
+          <FiltroCard
+            valor={enums.Prioridade.URGENTE}
+            criterio="prioridade"
+            legenda="Urgentes"
+          />
+          <FiltroCard
+            valor={enums.Prioridade.IMPORTANTE}
+            criterio="prioridade"
+            legenda="Importantes"
+          />
+          <FiltroCard
+            valor={enums.Prioridade.NORMAL}
+            criterio="prioridade"
+            legenda="Normais"
+          />
+          <FiltroCard criterio="todas" legenda="todas" />
         </S.Filtro>
       </div>
     </S.Aside>
