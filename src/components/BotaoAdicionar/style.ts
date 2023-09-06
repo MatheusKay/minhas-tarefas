@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import styled from 'styled-components'
+import variaveis from '../../styles/variaveis'
 
 export const Botao = styled(Link)`
   height: 64px;
@@ -11,7 +12,7 @@ export const Botao = styled(Link)`
   position: fixed;
   bottom: 40px;
   right: 40px;
-  background-color: #44bd32;
+  background-color: ${variaveis.verde};
   color: #fff;
   border-radius: 50%;
   text-align: center;
